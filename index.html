@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaulty - Guia de Uso Oficial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Central de Ajuda Vaulty</h1>
+        <p>Aprenda a dominar suas finanças com a nossa tecnologia Offline-First</p>
+    </header>
+
+    <div class="abas-container">
+        <button class="aba-btn ativa" onclick="abrirAba(event, 'primeiros-passos')">🚀 Primeiros Passos</button>
+        <button class="aba-btn" onclick="abrirAba(event, 'saldo-acumulado')">🔄 Saldo Acumulado</button>
+        <button class="aba-btn" onclick="abrirAba(event, 'sincronizacao')">☁️ Sincronização e Conta</button>
+        <button class="aba-btn" onclick="abrirAba(event, 'guia')">📓 Guia de Uso</button>
+    </div>
+
+    <div class="conteudo-guia">
+        
+        <div id="primeiros-passos" class="secao-guia ativa">
+            <h2>Como usar o aplicativo</h2>
+            
+            <div class="passo">
+                <div class="passo-titulo"><span class="passo-numero">1</span> Acessando o App</div>
+                <p>Faça login de forma totalmente segura utilizando sua conta do Google. Seus dados locais serão imediatamente vinculados ao seu perfil de forma criptografada.</p>
+            </div>
+
+            <div class="passo">
+                <div class="passo-titulo"><span class="passo-numero">2</span> Cadastrando Receitas ou Despesas</div>
+                <p>Clique no botão de inserção na tela principal. Digite a descrição, selecione a categoria desejada, insira o valor e confirme. Os gráficos do seu painel serão atualizados em tempo real.</p>
+            </div>
+
+            <div class="passo">
+                <div class="passo-titulo"><span class="passo-numero">3</span> Navegação Mensal</div>
+                <p>Utilize as setas superiores ao lado do nome do mês para navegar entre os históricos passados ou planejar os meses futuros. O sistema filtra automaticamente tudo o que pertence àquele período.</p>
+            </div>
+        </div>
+
+        <div id="saldo-acumulado" class="secao-guia">
+            <h2>Regra de Saldo Acumulado (Rollover)</h2>
+            <p class="texto-explicativo">O Vaulty calcula automaticamente a transição financeira da sua vida de um mês para o outro. Entenda como funciona:</p>
+
+            <div class="passo">
+                <div class="passo-titulo">📈 Caso seu mês termine no AZUL (Sobra)</div>
+                <p>Se em maio você recebeu mais do que gastou, no primeiro milissegundo do dia 1º de junho o robô do Vaulty criará uma receita automática com o valor exato da sobra.</p>
+                <div class="alerta-box">
+                    <h4>Categoria automática gerada:</h4>
+                    <p class="texto-sucesso">"Saldo positivo - mês anterior"</p>
+                </div>
+            </div>
+
+            <div class="passo">
+                <div class="passo-titulo">📉 Caso seu mês termine no VERMELHO (Dívida)</div>
+                <p>Se os gastos superaram seus ganhos no mês passado, o sistema descontará essa diferença logo no início do novo mês, gerando um lançamento automático de débito.</p>
+                <div class="alerta-box negativo">
+                    <h4>Categoria automática gerada:</h4>
+                    <p class="texto-erro">"Saldo negativo - mês anterior"</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="sincronizacao" class="secao-guia">
+            <h2>Funcionamento Offline e Nuvem</h2>
+            
+            <div class="passo">
+                <div class="passo-titulo">🔒 Totalmente Funcional Sem Internet</div>
+                <p>Você pode cadastrar, editar ou excluir qualquer movimentação financeira mesmo estando em Modo Avião ou sem sinal. O app salva tudo no banco interno (Room) sem nenhuma lentidão ou tela de carregamento.</p>
+            </div>
+
+            <div class="passo">
+                <div class="passo-titulo">⚡ Sincronização Invisível</div>
+                <p>Assim que o seu dispositivo detectar uma conexão estável (Wi-Fi ou 4G), nossas rotinas em segundo plano enviam as alterações em lote para o servidor seguro (Cloud Firestore) sem interromper a sua navegação.</p>
+            </div>
+
+            <div class="passo">
+                <div class="passo-titulo">⚙️ Privacidade e Exclusão</div>
+                <p>No menu lateral, você possui controle total sobre suas informações. Ao clicar em "Limpar Dados" ou "Excluir Conta", o sistema apaga de forma definitiva seus registros locais e todos os backups salvos na nuvem.</p>
+            </div>
+        </div>
+
+        <div id="guia" class="secao-guia">
+            <h2>📓 Guia Passo a Passo do Vaulty</h2>
+            <br>
+            <div class="passo"> 
+                <div class="passo-titulo">➕ Passos Iniciais e Exclusão</div>
+                <h4 style="margin-bottom: 5px;">Como adicionar uma transação?</h4>
+                <p>Para abrir a opção de adicionar transações, toque no botão "+" na parte inferior direita da tela inicial.</p>
+
+                <div class="imagens-container">
+                    <img src="passo-a-passo/Screenshot_20260624_000554.png" alt="Seletor de Mês e Ano" class="passo-imagem">
+                </div>
+                <br>
+                <h4 style="margin-top: 15px; margin-bottom: 5px;">Opções disponíveis</h4>
+                <p>É possível selecionar receitas ou despesas. Em ambas as opções, você pode escolher as categorias pré-definidas ou adicionar uma nova, além de inserir descrição e valor. Antes de tocar em "Adicionar", é possível salvar a transação como recorrente, seguindo o dia do recebimento. Caso opte por não marcar, a transação será registrada apenas no mês atual.</p>
+                <p style="margin-top: 10px;"><strong>Para excluir uma transação:</strong> Caso tenha registrado algo errado ou precise apagar um lançamento, basta deslizar a transação para a esquerda na tela inicial, revelando o ícone vermelho de lixeira.</p>
+                
+                <div class="imagens-container">
+                    <img src="passo-a-passo/Screenshot_20260623_232831.png" alt="Modal de Adicionar Nova Transação" class="passo-imagem">
+                    <img src="passo-a-passo/Screenshot_20260623_233548.png" alt="Tela Inicial do App" class="passo-imagem">
+                    <img src="passo-a-passo/Screenshot_20260623_233301.png" alt="Exclusão de transação deslizando para o lado" class="passo-imagem">
+                </div>
+            </div>
+            <br>
+            <div class="passo">
+                <div class="passo-titulo">📅 Navegação Rápida</div>
+                <p>Para navegar rapidamente para outro mês ou ano, toque sobre o mês atual exibido no topo. O seletor será aberto para você escolher a data desejada de forma direta, sem precisar passar mês a mês.</p>
+                
+                <div class="imagens-container">
+                    <img src="passo-a-passo/Screenshot_20260623_233522.png" alt="Seletor de Mês e Ano" class="passo-imagem">
+                    <img src="passo-a-passo/Screenshot_20260623_232659.png" alt="Seletor de Mês e Ano" class="passo-imagem">
+                </div>
+            </div>
+            <br>
+            <div class="passo">
+                <div class="passo-titulo">📊 Análise de Despesas e Gráficos</div>
+                <p>Toque no menu superior (⋮) e acesse <strong>Ver Gráficos</strong>. Esta tela exibe um gráfico de barras detalhado, mostrando a proporção dos seus gastos por categoria para facilitar o controle financeiro do mês.</p>
+
+                <div class="imagens-container">
+                    <img src="passo-a-passo/Screenshot_20260623_233341.png" alt="Gráficos de Análise de Despesas" class="passo-imagem">
+                </div>
+            </div>
+            <br>
+            <div class="passo">
+                <div class="passo-titulo">🎯 Limites de Orçamento</div>
+                <p>Toque no menu superior (⋮) e acesse <strong>Orçamentos</strong>. Toque na categoria desejada em "Orçamentos" para definir o teto de gastos. O aplicativo preencherá visualmente a barra verde à medida que as despesas ocorrerem, mantendo você no controle.</p>
+
+                <div class="imagens-container">
+                    <img src="passo-a-passo/Screenshot_20260623_233408.png" alt="Modal para Definir Orçamento" class="passo-imagem">
+                    <img src="passo-a-passo/Screenshot_20260623_233420.png" alt="Lista de Orçamentos com barra de progresso" class="passo-imagem">
+                </div>
+            </div>
+            <br>
+            <div class="passo">
+                <div class="passo-titulo">⚙️ Recorrências, Aparência e Exclusão</div>
+                <p>Toque no menu superior (⋮) e acesse <strong>Configurações</strong> para alternar facilmente entre o Modo Escuro e Claro, ou solicitar a exclusão permanente dos seus dados (LGPD).</p>
+
+                <div class="imagens-container">
+                    <img src="passo-a-passo/Screenshot_20260623_233459.png" alt="Lista de Transações Recorrentes" class="passo-imagem">
+                    <img src="passo-a-passo/Screenshot_20260623_233741.png" alt="Configurações em Modo Claro" class="passo-imagem">
+                    <img src="passo-a-passo/Screenshot_20260623_233752.png" alt="Aviso Irreversível de Exclusão de Conta" class="passo-imagem">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
